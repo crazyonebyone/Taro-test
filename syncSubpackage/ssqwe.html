@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const narr = [0, 2, 5, 1, 8, 23, 22, 17, 18, 14, 22, 67, 23, 33, 21, 23, 12, 9, 34, 23, 56, 686, 234, 44, 13, 545, 3234, 4, 45, 435, 4, 5, 56, 5, 45, 4, 45, 23, 2, 578, 23, 123, 1, 123, 1245, 13,4,12,321,412,23,123,23,11,2312,123,125,123,6456,1231,212]
+
+    function maopao() {
+      let k = narr.length
+      for(let i =0; i < narr.length -1;i++){
+        let flag = 0;
+        for(let j = 0; j < narr.length -1 - i;j++){
+          if(narr[j] > narr[j + 1]){
+            const val = narr[j]
+            narr[j] = narr[j + 1]
+            narr[j + 1] = val
+            flag = 1
+          }
+        }
+        if (flag === 0) return
+      }
+    }
+    maopao()
+    console.log(narr)
+    // function tailQuickSort(arr, left, right) {
+    //   let i = left,
+    //     j = right,
+    //     flag = arr[left];
+    //   while (i < j) {
+    //     while (i < j && arr[j] >= flag)
+    //       j--;
+    //     while (i < j && arr[i] <= flag)
+    //       i++;
+    //     if (i < j) {
+    //       let temp = arr[i];
+    //       arr[i] = arr[j];
+    //       arr[j] = temp;
+    //     }
+    //   }
+    //   arr[left] = arr[i];
+    //   arr[i] = flag;
+    //   return i;
+    // }
+
+    // function quickSort(arr, left, right) {
+    //   let pivot = left;
+    //   while (left < right) {
+    //     pivot = tailQuickSort(arr, left, right);
+    //     quickSort(arr, left, pivot - 1);
+    //     left = pivot + 1;
+    //   }
+    // }
+
+    // quickSort(narr, 0, narr.length - 1);
+    // console.log(narr);
+
+    // function revers(a, i, j) {
+    //   const iV = a[i]
+    //   a[i] = a[j]
+    //   a[j] = iV
+    // }
+    // function groupArr(arr, start, end) {
+
+    //   const q = Math.ceil(Math.random() * (end - start) + start);
+
+    //   const qV = arr[q]
+    //   revers(arr, q, end)
+    //   let i = j = start
+    //   while (i < end) {
+    //     if (arr[i] >= qV) {
+    //       i++;
+    //     } else {
+    //       revers(arr, i, j);
+    //       i++;
+    //       j++;
+    //     }
+    //   }
+    //   revers(arr, end, j)
+    //   return j
+    // }
+    // function fastSort(arr, start, end) {
+    //   const len = end - start + 1
+    //   if(len < 2) return
+    //   else if (len === 2) return arr[start] > arr[end] ? revers(arr, start, end) : arr
+    //   const q = groupArr(arr, start, end);
+    //   fastSort(arr, start, q - 1);
+    //   fastSort(arr, q + 1, end);
+    // }
+    // fastSort(narr, 0, narr.length - 1)
+    // console.log(narr)
+    // let count = 0
+    // function quickSort(arr) {
+    //   let len = arr.length
+    //   if (len <= 1) {
+    //     return arr
+    //   }
+    //   let middle = Math.floor(len / 2)
+    //   let middleArr = [arr[middle]]
+    //   let left = []
+    //   let right = []
+    //   for (let i = 0; i < len; i++) {
+    //     console.log(count++, middle, arr[middle])
+    //     if (i == middle) {
+    //       continue
+    //     }
+
+    //     if (arr[i] > arr[middle]) {
+    //       left.push(arr[i])
+    //     } else if (arr[i] < arr[middle]) {
+    //       right.push(arr[i])
+    //     } else {
+    //       middleArr.push(arr[i])
+    //     }
+    //   }
+    //   // 递归
+    //   return [...quickSort(left), ...middleArr, ...quickSort(right)]
+    // }
+    //  console.log(quickSort(narr))
+  </script>
+</body>
+
+</html>
